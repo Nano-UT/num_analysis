@@ -12,6 +12,7 @@ def calc(A,x):
         new_x = np.dot(A,x) #ここで、停止条件を「xの更新が十分小さい」と読み替える
         if np.linalg.norm(x * np.linalg.norm(new_x) - new_x) < e:
             print("eigenvalue:", np.linalg.norm(new_x))
+            print("steps:",i)
             return
         x = new_x / np.linalg.norm(new_x)
         i += 1
