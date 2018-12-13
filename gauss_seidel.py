@@ -33,10 +33,15 @@ while(True):
         x[i][0] = (- sum(np.dot(A[i],x)) + b[i][0]) / A[i][i] + x[i][0]
     j += 1
     res_error.append(np.linalg.norm(np.dot(A,x)-b))
-    if res_error[-1] < e or j > 10000:
+    if res_error[-1] < e or j >= 100000:
         break
 
-if i == 10000:
+if j == 100000:
     print("Not solved")
+else:
+    print("steps:",j)
 plt.plot(res_error)
+plt.title("GS method, size: " + str(n) + ", c = " + str(c))
+plt.xlabel("steps")
+plt.ylabel("residual error")
 plt.show()

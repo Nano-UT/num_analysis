@@ -38,11 +38,16 @@ while(True):
     p = r + be * p
     i += 1
     res_error.append(np.linalg.norm(np.dot(A,x)-b))
-    if res_error[-1] < e or i > 10000:
+    if res_error[-1] < e or i >= 100000:
         res_error[-1]
         break
 
-if i == 10000:
+if i == 100000:
     print("Not solved")
+else:
+    print("steps:",i)
 plt.plot(res_error)
+plt.title("CG method, size: " + str(n) + ", c = " + str(c))
+plt.xlabel("steps")
+plt.ylabel("residual error")
 plt.show()
