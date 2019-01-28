@@ -13,8 +13,9 @@ while(h * i <= 100):
     q.append(q[i-1]+2*h*p[i])
     i += 1
 
+plt.rcParams["font.family"] = "IPAexGothic"
 plt.plot(p,q)
 plt.xlabel('p')
 plt.ylabel('q')
-plt.title("Stride: "+str(h))
+plt.title("中点則 刻み幅: "+str(h))
 plt.show()

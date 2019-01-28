@@ -17,8 +17,10 @@ while(h * i <= 100):
 
 p = [xs[i][0] for i in range(len(xs))]
 q = [xs[i][1] for i in range(len(xs))]
+
+plt.rcParams["font.family"] = "IPAexGothic"
 plt.plot(p,q)
 plt.xlabel('p')
 plt.ylabel('q')
-plt.title("Stride: "+str(h))
+plt.title("4次Runge-Kutta法 刻み幅: "+str(h))
 plt.show()
